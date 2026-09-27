@@ -1,0 +1,51 @@
+# What this repository publishes: ECCOFS currents — at the surface and at 50 m, from NOAA's open-data bucket
+# `noaa-nos-eccofs-pds` — published, not drawn on the website's map (the
+# owner, 2026-09-27). The fetcher is the site's `scripts/fetch-eccofs.py`,
+# shared with `eccofs-model-fields-repo`: this repository's step is scoped with `--only=` to
+# its own products, because a bare call would write the sibling's files and
+# the write fence would refuse the run.
+#
+# - **Every `roots` entry must be one the site's `test-schema.mjs --roots`
+#   publishes**, or the orchestrator exits 2.
+# - **Paths are relative to the site checkout**: `scripts/...`.
+# - **One regional grid per root, 0.04 degree, no tiles**, `regional: true` in
+#   every header (the contract's rule for a model that covers part of the
+#   ocean). Sizes measured 2026-09-27.
+#
+# **The budget.** Frames are 3-hourly and each run publishes the one at or
+# before now, on a schedule every three hours: a frame is at most three hours
+# old when published plus the three to the next run, and GitHub has delivered
+# scheduled runs up to four hours late. Eight hours; re-measure after a week.
+# The bucket's four-day posting lag does not enter while postings arrive —
+# each covers about four days ahead — and when they stop, the frames run out
+# and this budget is what says so.
+
+[contract]
+check = ["node", "scripts/test-schema.mjs"]
+roots = ["node", "scripts/test-schema.mjs", "--roots"]
+
+[defaults]
+timeout_minutes = 20
+
+# Named after the server: NOAA's open-data bucket.
+[steps.eccofs]
+cmd = ["python3", "scripts/fetch-eccofs.py", "--only=cur-eccofs,cur-eccofs-50m"]
+lane = "noaa-eccofs-bucket"
+
+# 21.7 MB
+[products.cur-eccofs]
+title = "ECCOFS surface currents"
+step = "eccofs"
+roots = ["cur-eccofs.json"]
+writes = ["cur-eccofs.json"]
+max_age_hours = 8
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs"]
+
+# 21.8 MB
+[products.cur-eccofs-50m]
+title = "ECCOFS currents at 50 m"
+step = "eccofs"
+roots = ["cur-eccofs-50m.json"]
+writes = ["cur-eccofs-50m.json"]
+max_age_hours = 8
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-50m"]
