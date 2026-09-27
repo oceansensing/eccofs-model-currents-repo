@@ -71,7 +71,17 @@ status reported `schedule: null`, the dispatch-only state.
 
 ## Open
 
-- **Go live**, waiting on the owner's secrets: the roots join the site's
-  contract and this origin joins `MAP_ORIGINS` in one site commit, then a
-  dispatched run, then the schedule uncommented.
+- **Went live 2026-09-27** — the entry below.
 - **Re-measure `max_age_hours` (8)** after a week of scheduled runs.
+
+## 2026-09-27 — live
+
+The owner added the secrets; the site's commit `d978a1b` put this
+repository's roots in the contract and its origin in `MAP_ORIGINS`; the
+dispatched run 36296052849 went green on its first try — build, Pages and R2 — and
+`status/status.json` read, at 2026-09-27T05:04:18Z: every product `fresh`
+(2 of 2), the nearest frame 2.07 h from the
+reader, `contract: 1`. Each root was fetched from Pages
+and served. The schedule, `43 1-23/3 * * *`, was then uncommented (longest gap
+3 h, so the watchdog's silence budget is 5.5 h); the
+first scheduled run is the next reading.
