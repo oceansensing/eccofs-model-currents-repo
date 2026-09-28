@@ -1,4 +1,4 @@
-# What this repository publishes: ECCOFS currents — at the surface and at 50 m, from NOAA's open-data bucket
+# What this repository publishes: ECCOFS currents — at the surface and at 50 m, averaged over the top 200, 350 and 1000 m, and at the bottom, from NOAA's open-data bucket
 # `noaa-nos-eccofs-pds` — published, not drawn on the website's map (the
 # owner, 2026-09-27). The fetcher is the site's `scripts/fetch-eccofs.py`,
 # shared with `eccofs-model-fields-repo`: this repository's step is scoped with `--only=` to
@@ -29,7 +29,7 @@ timeout_minutes = 20
 
 # Named after the server: NOAA's open-data bucket.
 [steps.eccofs]
-cmd = ["python3", "scripts/fetch-eccofs.py", "--only=cur-eccofs,cur-eccofs-50m"]
+cmd = ["python3", "scripts/fetch-eccofs.py", "--only=cur-eccofs,cur-eccofs-50m,cur-eccofs-avg200m,cur-eccofs-avg350m,cur-eccofs-avg1000m,cur-eccofs-bottom"]
 lane = "noaa-eccofs-bucket"
 
 # 21.7 MB
@@ -49,3 +49,49 @@ roots = ["cur-eccofs-50m.json"]
 writes = ["cur-eccofs-50m.json"]
 max_age_hours = 8
 namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-50m"]
+
+# **From the daily history files, since 2026-09-28**: one snapshot a day at
+# 00 UTC holds every level, so the averages and the bottom come from there —
+# u and v at all 50 levels read once (961 MB of Range reads; 87 s from a home
+# line, 148 s for the whole step with the two above, measured), turned east
+# and north by the site's `scripts/roms.py`, and each held to the quick-save
+# file's own fields at the same moment. **The budget is a daily one**: a
+# snapshot is at most 24 hours old before the next, plus the three hours to
+# the next run and GitHub's four of lateness — 30 hours, Mercator's daily
+# budget by the same arithmetic.
+
+# 21.5 MB
+[products.cur-eccofs-avg200m]
+title = "ECCOFS currents averaged over the top 200 m"
+step = "eccofs"
+roots = ["cur-eccofs-avg200m.json"]
+writes = ["cur-eccofs-avg200m.json"]
+max_age_hours = 30
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-avg200m"]
+
+# 21.4 MB
+[products.cur-eccofs-avg350m]
+title = "ECCOFS currents averaged over the top 350 m"
+step = "eccofs"
+roots = ["cur-eccofs-avg350m.json"]
+writes = ["cur-eccofs-avg350m.json"]
+max_age_hours = 30
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-avg350m"]
+
+# 21.2 MB
+[products.cur-eccofs-avg1000m]
+title = "ECCOFS currents averaged over the top 1000 m"
+step = "eccofs"
+roots = ["cur-eccofs-avg1000m.json"]
+writes = ["cur-eccofs-avg1000m.json"]
+max_age_hours = 30
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-avg1000m"]
+
+# 20.7 MB
+[products.cur-eccofs-bottom]
+title = "ECCOFS bottom currents"
+step = "eccofs"
+roots = ["cur-eccofs-bottom.json"]
+writes = ["cur-eccofs-bottom.json"]
+max_age_hours = 30
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-bottom"]

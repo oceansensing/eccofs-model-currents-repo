@@ -9,21 +9,32 @@ what must not be got wrong and the shared doc doctrine.
 
 ## What it publishes
 
-Two roots, each a vector pair on one regional grid at 0.04 degree (1647 x
-1422, `regional: true`, integers at `unitScale` 0.001), the 3-hourly frame
-at or before now:
+Six roots, each a vector pair on one regional grid at 0.04 degree (1647 x
+1422, `regional: true`, integers at `unitScale` 0.001). The first two are
+the 3-hourly frame at or before now, from the quick-save files; the other
+four, since 2026-09-28, are the daily 00 UTC snapshot at or before now, from
+the history files, which hold every level:
 
 | root | quantity | size |
 | --- | --- | --- |
 | `cur-eccofs.json` | surface currents | 21.7 MB |
 | `cur-eccofs-50m.json` | currents at 50 m | 21.8 MB |
+| `cur-eccofs-avg200m.json` | currents averaged over the top 200 m | 21.5 MB |
+| `cur-eccofs-avg350m.json` | currents averaged over the top 350 m | 21.4 MB |
+| `cur-eccofs-avg1000m.json` | currents averaged over the top 1000 m | 21.2 MB |
+| `cur-eccofs-bottom.json` | bottom currents (the lowest s-level) | 20.7 MB |
+
+An average's header says `depthAveraged: [0, cap]`; where the water is
+shallower than the cap it is the mean of the whole column, so on the shelf
+the three are one. A bottom root's header carries no depth: the lowest level
+is a different depth in every cell, and the root's name says bottom.
 
 The fetcher is the site's `scripts/fetch-eccofs.py`, shared with the
 sibling repository and scoped here with `--only=`.
 
 ## Storage
 
-About 42 MB a tree (measured 2026-09-27).
+About 128 MB a tree (measured 2026-09-28; 42 MB before the history's four roots).
 
 ## Why it is separate from `eccofs-model-fields-repo`
 

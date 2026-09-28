@@ -94,3 +94,26 @@ line. Dependabot reads requirements files and never a workflow line: an
 inline pin elsewhere had carried `requests` 2.32.3, a version with two
 advisories, unflagged. The site's `check:docs` now refuses an inline package
 here. Confirmed by a dispatched run, green on build, Pages and R2.
+
+## 2026-09-28 — the averages and the bottom, from the history files
+
+Four roots joined: the currents averaged over the top 200, 350 and 1000 m
+(the caps Mercator's and ESPC's averages use) and the bottom current. The
+quick-save files stop at fixed slices, so these come from the daily history
+snapshot (`his/`, 00 UTC, 4.65 GB, NetCDF classic): u and v at all 50
+levels, 961 MB of Range reads four at a time, averaged by each level's own
+thickness below the free surface and clipped at each cap. They come as ROMS
+writes them, on staggered points along the grid's axes; the site's
+`scripts/roms.py` turns them east and north.
+
+**Measured before written, and held every run.** The top level, turned,
+reproduces the quick-save file's `u_sur_eastward` at the same moment to a
+median of 1e-8 m/s once land's velocity counts as zero (NOAA's own rule;
+left missing, 15,320 coastal cells went empty). The levels' mean over the
+whole column reproduces `ubar_eastward` to 3e-6. The Gulf Stream check holds
+on each average: 5,855, 5,013 and 1,464 points faster than 0.8 m/s, flowing
+toward 60, 61 and 69 degrees. The bottom current's median over water deeper
+than 200 m is 0.066 m/s against the top level's 0.231.
+
+Rehearsed from this Mac: the whole step, old roots and new, in 148 s, every
+file matching the site's contract. Budget 30 hours, a daily snapshot's.
