@@ -1,0 +1,138 @@
+{
+ "schema": 2,
+ "contract": 1,
+ "generated": "2026-10-04T02:31:03Z",
+ "mode": "full",
+ "run": {
+  "id": "37171224254",
+  "url": "https://github.com/oceansensing/eccofs-model-currents-repo/actions/runs/37171224254"
+ },
+ "schedule": {
+  "crons": [
+   "43 1-23/3 * * *"
+  ],
+  "longestGapHours": 3.0
+ },
+ "products": {
+  "cur-eccofs": {
+   "title": "ECCOFS surface currents",
+   "roots": [
+    "cur-eccofs.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-10-04T02:31:03Z",
+   "updated": "2026-10-01T02:10:26Z",
+   "hour": "2026-09-08T00:00:00Z",
+   "modelRun": "2026-08-31T00:00:00Z",
+   "source": "NOAA NOS ECCOFS",
+   "hours": [
+    "2026-09-08T00:00:00Z"
+   ],
+   "stale": true,
+   "staleCause": "upstream",
+   "ageHours": 626.52,
+   "nearestOffsetHours": 626.52
+  },
+  "cur-eccofs-50m": {
+   "title": "ECCOFS currents at 50 m",
+   "roots": [
+    "cur-eccofs-50m.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-10-04T02:31:03Z",
+   "updated": "2026-10-01T02:10:26Z",
+   "hour": "2026-09-08T00:00:00Z",
+   "modelRun": "2026-08-31T00:00:00Z",
+   "source": "NOAA NOS ECCOFS",
+   "hours": [
+    "2026-09-08T00:00:00Z"
+   ],
+   "stale": true,
+   "staleCause": "upstream",
+   "ageHours": 626.52,
+   "nearestOffsetHours": 626.52
+  },
+  "cur-eccofs-avg200m": {
+   "title": "ECCOFS currents averaged over the top 200 m",
+   "roots": [
+    "cur-eccofs-avg200m.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-10-04T02:31:03Z",
+   "updated": "2026-10-01T02:10:26Z",
+   "hour": "2026-09-08T00:00:00Z",
+   "modelRun": "2026-08-31T00:00:00Z",
+   "source": "NOAA NOS ECCOFS",
+   "hours": [
+    "2026-09-08T00:00:00Z"
+   ],
+   "stale": true,
+   "staleCause": "upstream",
+   "ageHours": 626.52,
+   "nearestOffsetHours": 626.52
+  },
+  "cur-eccofs-avg350m": {
+   "title": "ECCOFS currents averaged over the top 350 m",
+   "roots": [
+    "cur-eccofs-avg350m.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-10-04T02:31:03Z",
+   "updated": "2026-10-01T02:10:26Z",
+   "hour": "2026-09-08T00:00:00Z",
+   "modelRun": "2026-08-31T00:00:00Z",
+   "source": "NOAA NOS ECCOFS",
+   "hours": [
+    "2026-09-08T00:00:00Z"
+   ],
+   "stale": true,
+   "staleCause": "upstream",
+   "ageHours": 626.52,
+   "nearestOffsetHours": 626.52
+  },
+  "cur-eccofs-avg1000m": {
+   "title": "ECCOFS currents averaged over the top 1000 m",
+   "roots": [
+    "cur-eccofs-avg1000m.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-10-04T02:31:03Z",
+   "updated": "2026-10-01T02:10:26Z",
+   "hour": "2026-09-08T00:00:00Z",
+   "modelRun": "2026-08-31T00:00:00Z",
+   "source": "NOAA NOS ECCOFS",
+   "hours": [
+    "2026-09-08T00:00:00Z"
+   ],
+   "stale": true,
+   "staleCause": "upstream",
+   "ageHours": 626.52,
+   "nearestOffsetHours": 626.52
+  },
+  "cur-eccofs-bottom": {
+   "title": "ECCOFS bottom currents",
+   "roots": [
+    "cur-eccofs-bottom.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-10-04T02:31:03Z",
+   "updated": "2026-10-01T02:10:26Z",
+   "hour": "2026-09-08T00:00:00Z",
+   "modelRun": "2026-08-31T00:00:00Z",
+   "source": "NOAA NOS ECCOFS",
+   "hours": [
+    "2026-09-08T00:00:00Z"
+   ],
+   "stale": true,
+   "staleCause": "upstream",
+   "ageHours": 626.52,
+   "nearestOffsetHours": 626.52
+  }
+ }
+}

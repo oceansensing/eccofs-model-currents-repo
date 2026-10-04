@@ -1,0 +1,26 @@
+{
+ "schema": 1,
+ "generated": "2026-10-04T02:31:03Z",
+ "mode": "full",
+ "fates": {
+  "cur-eccofs": "fresh",
+  "cur-eccofs-50m": "fresh",
+  "cur-eccofs-avg200m": "fresh",
+  "cur-eccofs-avg350m": "fresh",
+  "cur-eccofs-avg1000m": "fresh",
+  "cur-eccofs-bottom": "fresh"
+ },
+ "reasons": {},
+ "built": {},
+ "withheld": {},
+ "deploy": true,
+ "notes": [
+  "cur-eccofs: nearest frame is 626.5 h old, past its 8 h budget \u2014 upstream has nothing newer",
+  "cur-eccofs-50m: nearest frame is 626.5 h old, past its 8 h budget \u2014 upstream has nothing newer",
+  "cur-eccofs-avg200m: nearest frame is 626.5 h old, past its 30 h budget \u2014 upstream has nothing newer",
+  "cur-eccofs-avg350m: nearest frame is 626.5 h old, past its 30 h budget \u2014 upstream has nothing newer",
+  "cur-eccofs-avg1000m: nearest frame is 626.5 h old, past its 30 h budget \u2014 upstream has nothing newer",
+  "cur-eccofs-bottom: nearest frame is 626.5 h old, past its 30 h budget \u2014 upstream has nothing newer"
+ ],
+ "behind": []
+}

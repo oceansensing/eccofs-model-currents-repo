@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "product": "cur-eccofs",
+ "title": "ECCOFS surface currents",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-10-04T02:31:03Z",
+ "updated": "2026-10-01T02:10:26Z",
+ "hour": "2026-09-08T00:00:00Z",
+ "modelRun": "2026-08-31T00:00:00Z",
+ "source": "NOAA NOS ECCOFS",
+ "hours": [
+  "2026-09-08T00:00:00Z"
+ ],
+ "files": {
+  "cur-eccofs.json": {
+   "bytes": 21782573,
+   "sha256": "46e0611dab2e6805561ee2e514d1db3b676ecc5cd911a0f7ae05d76d8305250e"
+  }
+ }
+}

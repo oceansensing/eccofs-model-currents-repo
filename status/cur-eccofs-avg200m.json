@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "product": "cur-eccofs-avg200m",
+ "title": "ECCOFS currents averaged over the top 200 m",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-10-04T02:31:03Z",
+ "updated": "2026-10-01T02:10:26Z",
+ "hour": "2026-09-08T00:00:00Z",
+ "modelRun": "2026-08-31T00:00:00Z",
+ "source": "NOAA NOS ECCOFS",
+ "hours": [
+  "2026-09-08T00:00:00Z"
+ ],
+ "files": {
+  "cur-eccofs-avg200m.json": {
+   "bytes": 21577645,
+   "sha256": "f3cc07524cefa7ef6f9180e5106584910b0fa36af6824d222016f2458d379996"
+  }
+ }
+}
