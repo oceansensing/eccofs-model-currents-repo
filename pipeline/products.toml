@@ -29,7 +29,7 @@ timeout_minutes = 20
 
 # Named after the server: NOAA's open-data bucket.
 [steps.eccofs]
-cmd = ["python3", "scripts/fetch-eccofs.py", "--only=cur-eccofs,cur-eccofs-50m,cur-eccofs-avg200m,cur-eccofs-avg350m,cur-eccofs-avg1000m,cur-eccofs-bottom"]
+cmd = ["python3", "scripts/fetch-eccofs.py", "--only=cur-eccofs,cur-eccofs-50m,cur-eccofs-avg200m,cur-eccofs-avg350m,cur-eccofs-avg1000m,cur-eccofs-bottom,uv-eccofs"]
 lane = "noaa-eccofs-bucket"
 
 # 21.7 MB
@@ -95,3 +95,27 @@ roots = ["cur-eccofs-bottom.json"]
 writes = ["cur-eccofs-bottom.json"]
 max_age_hours = 30
 namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=cur-eccofs-bottom"]
+
+# **Currents at fixed depths, R2's alone** (2026-10-10; the site's fetcher, LEVELS): the model's
+# own levels interpolated to the first 48 of Mercator's depths, every one its
+# water reaches, one root a depth named for it to the meter, below the datum as
+# the model's own fixed slices are -- written by the same step as the rest.
+[products.uv-eccofs]
+title = "ECCOFS currents at Mercator's depths"
+step = "eccofs"
+roots = ["uv-eccofs-0m.json", "uv-eccofs-2m.json", "uv-eccofs-3m.json", "uv-eccofs-4m.json",
+         "uv-eccofs-5m.json", "uv-eccofs-6m.json", "uv-eccofs-8m.json", "uv-eccofs-10m.json",
+         "uv-eccofs-11m.json", "uv-eccofs-13m.json", "uv-eccofs-16m.json", "uv-eccofs-18m.json",
+         "uv-eccofs-22m.json", "uv-eccofs-25m.json", "uv-eccofs-29m.json", "uv-eccofs-34m.json",
+         "uv-eccofs-40m.json", "uv-eccofs-47m.json", "uv-eccofs-56m.json", "uv-eccofs-66m.json",
+         "uv-eccofs-78m.json", "uv-eccofs-92m.json", "uv-eccofs-110m.json", "uv-eccofs-131m.json",
+         "uv-eccofs-156m.json", "uv-eccofs-186m.json", "uv-eccofs-222m.json", "uv-eccofs-266m.json",
+         "uv-eccofs-318m.json", "uv-eccofs-380m.json", "uv-eccofs-454m.json", "uv-eccofs-541m.json",
+         "uv-eccofs-644m.json", "uv-eccofs-763m.json", "uv-eccofs-902m.json", "uv-eccofs-1062m.json",
+         "uv-eccofs-1245m.json", "uv-eccofs-1452m.json", "uv-eccofs-1684m.json", "uv-eccofs-1942m.json",
+         "uv-eccofs-2225m.json", "uv-eccofs-2533m.json", "uv-eccofs-2866m.json", "uv-eccofs-3221m.json",
+         "uv-eccofs-3597m.json", "uv-eccofs-3992m.json", "uv-eccofs-4405m.json", "uv-eccofs-4833m.json"]
+writes = ["uv-eccofs-*m.json"]
+max_age_hours = 30
+r2_only = true
+namespace = ["python3", "scripts/fetch-eccofs.py", "--namespace", "--only=uv-eccofs"]

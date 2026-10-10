@@ -32,6 +32,17 @@ is a different depth in every cell, and the root's name says bottom.
 The fetcher is the site's `scripts/fetch-eccofs.py`, shared with the
 sibling repository and scoped here with `--only=`.
 
+## Published to R2 alone (since 2026-10-10)
+
+Declared `r2_only` in `pipeline/products.toml`: the same run builds these,
+they are left out of this repository's Pages site and its status, and the R2
+job publishes them beside the rest (the site pipeline's D13, its note of
+2026-10-09). Their roots stay on the `published` branch, as every product's do.
+
+| root | quantity | grid |
+| --- | --- | --- |
+| `uv-eccofs-<depth>m.json` | the current at each of the first 48 of Mercator's depths, 0.494 to 4833.291 m, interpolated from the model's 50 terrain-following levels below the datum, east and north as the other currents here; one root a depth named for it to the meter (`-0m` … `-4833m`), from the daily 00 UTC snapshot | 0.04 degree, `regional: true` |
+
 ## Storage
 
 About 128 MB a tree (measured 2026-09-28; 42 MB before the history's four roots).
