@@ -1,0 +1,20 @@
+{
+ "schema": 1,
+ "generated": "2026-10-11T03:18:47Z",
+ "mode": "full",
+ "fates": {
+  "cur-eccofs": "fresh",
+  "cur-eccofs-50m": "fresh",
+  "cur-eccofs-avg200m": "fresh",
+  "cur-eccofs-avg350m": "fresh",
+  "cur-eccofs-avg1000m": "fresh",
+  "cur-eccofs-bottom": "fresh",
+  "uv-eccofs": "fresh"
+ },
+ "reasons": {},
+ "built": {},
+ "withheld": {},
+ "deploy": true,
+ "notes": [],
+ "behind": []
+}

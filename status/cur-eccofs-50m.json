@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "product": "cur-eccofs-50m",
+ "title": "ECCOFS currents at 50 m",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-10-11T03:18:47Z",
+ "updated": "2026-10-11T03:18:47Z",
+ "hour": "2026-10-11T03:00:00Z",
+ "modelRun": "2026-10-06T00:00:00Z",
+ "source": "NOAA NOS ECCOFS",
+ "hours": [
+  "2026-10-11T03:00:00Z"
+ ],
+ "files": {
+  "cur-eccofs-50m.json": {
+   "bytes": 21868629,
+   "sha256": "9ff01ceff56d0e6ac60a861d8fb577a9d0ba5aa1686da5525b0066def6dd2c19"
+  }
+ }
+}
