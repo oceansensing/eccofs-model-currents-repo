@@ -41,7 +41,7 @@ job publishes them beside the rest (the site pipeline's D13, its note of
 
 | root | quantity | grid |
 | --- | --- | --- |
-| `uv-eccofs-<depth>m.json` | the current at each of the first 48 of Mercator's depths, 0.494 to 4833.291 m, interpolated from the model's 50 terrain-following levels below the datum, east and north as the other currents here; one root a depth named for it to the meter (`-0m` … `-4833m`), from the daily 00 UTC snapshot | 0.04 degree, `regional: true` |
+| `uv-eccofs-<depth>m.json` | the current at each of the first 48 of Mercator's depths, 0.494 to 4833.291 m, interpolated from the model's 50 terrain-following levels below the datum, east and north as the other currents here; one root a depth named for it to the meter (`-0m` … `-4833m`); the day's mean, from the model's daily averages file (since 2026-10-10's night; the 00 UTC snapshot before), its depth mean held to the file's own depth-averaged current | 0.04 degree, `regional: true` |
 
 ## Storage
 
