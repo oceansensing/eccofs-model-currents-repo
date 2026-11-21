@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "product": "cur-eccofs-avg1000m",
+ "title": "ECCOFS currents averaged over the top 1000 m",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-21T13:46:18Z",
+ "updated": "2026-11-21T07:48:47Z",
+ "hour": "2026-11-21T00:00:00Z",
+ "modelRun": "2026-11-17T00:00:00Z",
+ "source": "NOAA NOS ECCOFS",
+ "hours": [
+  "2026-11-21T00:00:00Z"
+ ],
+ "files": {
+  "cur-eccofs-avg1000m.json": {
+   "bytes": 21244661,
+   "sha256": "bf66d6c89db89cdf96f3c20400c832eee150a045983e4955c19b4cb733aa531b"
+  }
+ }
+}

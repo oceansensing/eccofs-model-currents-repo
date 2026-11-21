@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "product": "cur-eccofs-bottom",
+ "title": "ECCOFS bottom currents",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-21T13:46:18Z",
+ "updated": "2026-11-21T07:48:47Z",
+ "hour": "2026-11-21T00:00:00Z",
+ "modelRun": "2026-11-17T00:00:00Z",
+ "source": "NOAA NOS ECCOFS",
+ "hours": [
+  "2026-11-21T00:00:00Z"
+ ],
+ "files": {
+  "cur-eccofs-bottom.json": {
+   "bytes": 20813597,
+   "sha256": "304b03ee3a1adb33abca68613961e674a53e3f7ac087b6ca327ae40a24386b20"
+  }
+ }
+}
