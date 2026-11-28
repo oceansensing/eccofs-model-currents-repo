@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "product": "cur-eccofs-avg350m",
+ "title": "ECCOFS currents averaged over the top 350 m",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:46:56Z",
+ "updated": "2026-11-28T07:48:45Z",
+ "hour": "2026-11-28T00:00:00Z",
+ "modelRun": "2026-11-24T00:00:00Z",
+ "source": "NOAA NOS ECCOFS",
+ "hours": [
+  "2026-11-28T00:00:00Z"
+ ],
+ "files": {
+  "cur-eccofs-avg350m.json": {
+   "bytes": 21491808,
+   "sha256": "086e64333ea858caecdd53ea0581e7549532718ce75c5448c5483f3476e2a1ff"
+  }
+ }
+}
